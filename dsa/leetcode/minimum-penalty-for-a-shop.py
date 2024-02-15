@@ -13,11 +13,11 @@ class Solution:
         y_suffix = [0 for i in range(len(customers) + 1)]
         y_count = 0
         for i in range(len(customers) - 1, -1, -1):
-            if customers[i] == 'Y':
+            y_suffix[i+1] = y_count
+            if customers[i] == "Y":
                 y_count += 1
-            
-            y_suffix[i] = y_count
-
+        y_suffix[0] = y_count
+        print(y_suffix)
         penalty = len(customers)
         res = 0
         for i in range(len(n_prefix)):
